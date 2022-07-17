@@ -1,0 +1,13 @@
+.flex-center {
+    flex-direction: column;
+  
+    .modal-body {
+      width: 100%;
+      .flex-center {
+        flex-direction: column;
+        .btn {
+          border-radius: 5px;
+        }
+      }
+    }
+  }

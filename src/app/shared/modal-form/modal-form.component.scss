@@ -1,22 +1,15 @@
-@import "../../../theme/mixings";
+.flex-center {
+  flex-direction: column;
 
-.flex-center{
-    flex-direction: column;
-    .modal-header{
-        color: var(--coink-primary-color)
+  .modal-body {
+    margin-top: 20px;
+    width: 100%;
+    .flex-center {
+      flex-direction: row;
+      gap: 15px;
+      .btn {
+        border-radius: 5px;
+      }
     }
-
-    .modal-body{
-        width: 100%;
-        .custom-input{
-            width: 100% !important;
-        }
-        .flex-center{
-             flex-direction: row; 
-            gap: 15px;
-            .btn{
-                border-radius: 5px;
-            }
-        }
-    }
+  }
 }

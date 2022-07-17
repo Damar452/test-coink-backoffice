@@ -1,19 +1,23 @@
 <div class="modal">
   <div class="modal-content flex-center">
-
     <div class="modal-header">
-      <h4 class="roboto-bold">Simple Modal</h4>
+      <h4 class="roboto-bold">{{title}}</h4>
     </div>
-
-
     <div class="modal-body">
-      <app-default-input inputClass="custom-input roboto-medium" label="Número de tarjetas que quiere solicitar" [(ngModel)]="inputValue"></app-default-input>
-      <div class="flex-center">
-        <button class="btn secondary-btn open-sans-bold" (click)="close()">Cancelar</button>
-        <button class="btn primary-btn open-sans-bold" (click)="send()" >Solicitar</button>
-      </div>
+      <form [formGroup]="cardsForm" (ngSubmit)="send()">
+        <app-default-input 
+        [form]="cardsForm"
+        [label]="label"
+        type="number"
+        inputClass="custom-input roboto-medium" 
+        formControlName="amount" 
+        inputName="amount"
+        ></app-default-input>
+        <div class="flex-center">
+          <button class="btn secondary-btn open-sans-bold" (click)="close()">Cancelar</button>
+          <button class="btn primary-btn open-sans-bold" type="submit" [disabled]="cardsForm.invalid" >Solicitar</button>
+        </div>
+      </form>
     </div>
-
-
   </div>
 </div>

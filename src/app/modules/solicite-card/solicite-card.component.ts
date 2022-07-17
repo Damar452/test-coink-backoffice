@@ -13,6 +13,8 @@ export class SoliciteCardComponent implements OnInit {
   public tableHeaders: any[] = headers;
   public userList: any = [];
   public modalForm: boolean = false;
+  public modalContent: boolean = false;
+  public value: string;
 
   constructor(private dataDemo: DemoDataService) { }
 
@@ -25,14 +27,13 @@ export class SoliciteCardComponent implements OnInit {
         const {id, episode, status, created, name} = user;
         return {id, name, cardNumbers: episode.length, status, dateHour: created};
       })
-
-      this.showData();
     });
 
   }
 
-  showData(){
-    console.log(this.userList)
+  openConfirm(value:string){
+    this.value = value;
+    this.modalContent = true;
   }
 
 }

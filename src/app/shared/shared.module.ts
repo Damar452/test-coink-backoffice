@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { CustomTableComponent } from './custom-table/custom-table.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { ModalFormComponent } from './modal-form/modal-form.component';
+import { ModalContentsComponent } from './modal-contents/modal-contents.component';
 
 
 
@@ -18,6 +19,7 @@ import { ModalFormComponent } from './modal-form/modal-form.component';
     CustomTableComponent,
     AccordionComponent,
     ModalFormComponent,
+    ModalContentsComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,7 @@ import { ModalFormComponent } from './modal-form/modal-form.component';
     CustomTableComponent,
     AccordionComponent,
     ModalFormComponent,
+    ModalContentsComponent
   ]
 })
 export class SharedModule { }

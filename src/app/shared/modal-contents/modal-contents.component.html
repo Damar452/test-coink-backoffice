@@ -1,0 +1,16 @@
+<div class="modal">
+    <div class="modal-content flex-center">
+      <div class="modal-header">
+        <h4 class="roboto-bold">{{title}}</h4>
+      </div>
+      <div class="modal-body">
+          <div class="flex-center">
+            <ng-content></ng-content>
+            <div>
+                <button class="btn secondary-btn open-sans-bold" (click)="close()">Cancelar</button>
+                <button class="btn primary-btn open-sans-bold"  (click)="send()" >Confirmar</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

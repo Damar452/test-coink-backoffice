@@ -1,6 +1,7 @@
 
 <h1 class="primary-title">SOLICITUD TARJETAS</h1>
 
+<div *ngIf="!modalForm">
 <button class="roboto-medium search">
     <i class="fa-solid fa-magnifying-glass"></i>
     Buscar
@@ -22,6 +23,8 @@
 </div>
 
 <app-custom-table [headers]="tableHeaders" [data]="userList"></app-custom-table>
+
+</div>
 
 <div *ngIf="modalForm">
    <app-modal-form (onClose)="modalForm = false"></app-modal-form>

@@ -9,6 +9,8 @@ export class ModalFormComponent implements OnInit {
 
   @Output() onClose: EventEmitter<boolean> = new EventEmitter();
 
+  public inputValue: string;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +18,10 @@ export class ModalFormComponent implements OnInit {
 
   close(){
     this.onClose.emit();
+  }
+
+  send(){
+    console.log(this.inputValue)
   }
 
 }

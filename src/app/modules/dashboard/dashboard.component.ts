@@ -10,11 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  public isShow: boolean = true;
+  public isShow: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.setView(screen.width);
   }
 
   public changeSidebar(){
@@ -22,8 +23,11 @@ export class DashboardComponent implements OnInit {
   }
 
   onResize(event: any){
-    const width = event.target.innerWidth;
-    this.isShow = (width < 1024) ? false : true;
+    this.setView(event.target.innerWidth);
+  }
+
+  setView(width: number){
+    this.isShow = (width >= 1024) ? true : false;
   }
 
 }

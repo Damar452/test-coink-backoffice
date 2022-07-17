@@ -17,8 +17,12 @@ form{
     flex-direction: column;
     .inputs{
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      @include desktop {
+        flex-direction: row;
       gap: 40px;
+      }
+
     }
 
 }

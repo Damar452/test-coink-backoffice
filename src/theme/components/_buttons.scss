@@ -9,7 +9,8 @@
 }
 
 .button-rounded:disabled,
-.button-rounded[disabled] {
+.button-rounded[disabled],
+.btn:disabled,.btn[disabled]{
   border: none;
   background-color: var(--soft-gray-color);
 }

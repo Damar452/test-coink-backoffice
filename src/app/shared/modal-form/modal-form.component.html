@@ -7,10 +7,10 @@
 
 
     <div class="modal-body">
-      <app-default-input inputClass="custom-input roboto-medium" label="Número de tarjetas que quiere solicitar"></app-default-input>
+      <app-default-input inputClass="custom-input roboto-medium" label="Número de tarjetas que quiere solicitar" [(ngModel)]="inputValue"></app-default-input>
       <div class="flex-center">
         <button class="btn secondary-btn open-sans-bold" (click)="close()">Cancelar</button>
-        <button class="btn primary-btn open-sans-bold">Solicitar</button>
+        <button class="btn primary-btn open-sans-bold" (click)="send()" >Solicitar</button>
       </div>
     </div>
 

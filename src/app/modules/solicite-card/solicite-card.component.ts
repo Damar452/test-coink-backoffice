@@ -12,6 +12,7 @@ export class SoliciteCardComponent implements OnInit {
 
   public tableHeaders: any[] = headers;
   public userList: any = [];
+  public modalForm: boolean = false;
 
   constructor(private dataDemo: DemoDataService) { }
 

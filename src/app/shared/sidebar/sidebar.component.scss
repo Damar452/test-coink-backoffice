@@ -1,4 +1,6 @@
 .sidebar {
+  position:sticky; 
+  z-index: 999;
   height: 100vh;
   flex-basis: 200px;
   width: 242px;

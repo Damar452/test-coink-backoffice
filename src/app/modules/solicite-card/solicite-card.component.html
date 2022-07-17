@@ -18,8 +18,13 @@
 </form>
 
 <div class="solicite">
-    <button class="btn secondary-btn open-sans-bold" >Solicitar tarjetas</button>
+    <button class="btn secondary-btn open-sans-bold" (click)="modalForm = true">Solicitar tarjetas</button>
 </div>
 
 <app-custom-table [headers]="tableHeaders" [data]="userList"></app-custom-table>
+
+<div *ngIf="modalForm">
+   <app-modal-form (onClose)="modalForm = false"></app-modal-form>
+</div>
+
 

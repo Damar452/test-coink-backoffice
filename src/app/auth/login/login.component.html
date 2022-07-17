@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="container__left-panel flex-center">
+    <div class="container__left-panel__centered">
+      <h2 class="montserrat-bold tertiary">
+        ¡Bienvenido a la herramienta de registro Coink!
+      </h2>
+      <img src="assets/images/login-1.png" alt="" />
+      <h3 class="avenir tertiary">
+        Coink para tu día a día. <br />
+        Empieza ahorrando y <br />
+        cumple tus sueños con propósito.
+      </h3>
+      <img src="assets/images/login-2.png" alt="" />
+    </div>
+  </div>
+
+  <div class="container__right-panel">
+    <div class="container__right-panel__content">
+      <div class="container__right-panel__content__util">
+        <h4 class="montserrat">¿Aún no tienes una cuenta?</h4>
+        <h4 class="montserrat secondary link">Registrate ahora</h4>
+      </div>
+
+      <h2 class="montserrat-bold secondary">Iniciar sesión en Coink</h2>
+
+      <form class="container__right-panel__content__form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <app-default-input [form]="loginForm" inputClass="default-input" label="Correo Electrónico"
+          formControlName="email" inputName="email" icon="user"></app-default-input>
+
+        <app-default-input [form]="loginForm" inputClass="default-input" [type]="type[0]" [icon]="type[1]"
+          label="Contraseña" formControlName="password" inputName="password" (onClickIcon)="changeType()">
+        </app-default-input>
+
+        <div class="group-check">
+          <input type="checkbox" id="check" formControlName="remember" />
+          <label class="montserrat-semibold primary" for="check">Recordarme</label>
+        </div>
+
+        <div class="button-group flex-center">
+          <button class="button-rounded" type="submit" [disabled]="loginForm.invalid">
+            Iniciar sesión
+          </button>
+        </div>
+
+        <h4 class="montserrat-semibold secondary link flex-center">
+          ¿Olvidaste tu contraseña?
+        </h4>
+      </form>
+    </div>
+  </div>
+</div>

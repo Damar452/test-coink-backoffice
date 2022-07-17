@@ -1,0 +1,70 @@
+@import "../../../theme/mixings";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  @include desktop {
+    flex-direction: row;
+  }
+
+  &__left-panel {
+    background-color: var(--coink-secondary-color);
+    text-align: center;
+    @include desktop {
+      max-width: 35%;
+    }
+    &__centered {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      @include desktop {
+        img {
+          height: 163px;
+        }
+      }
+    }
+  }
+
+  &__right-panel {
+    padding: 30px;
+    background-color: var(--coink-soft-color);
+    @include desktop {
+      width: 65%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    &__content {
+      margin-right: 20px;
+      @include desktop {
+        width: 60%;
+        margin-right: 50px;
+      }
+      &__util {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        h4 {
+          margin-left: 10px;
+        }
+        @include desktop {
+          margin-right: -15px;
+          justify-content: flex-end;
+        }
+      }
+
+      &__form {
+        .button-group { margin: 10% 0 0 50px; }
+        .group-check {
+          input {
+            vertical-align: middle;
+            margin-right: 5px;
+            accent-color: var(--coink-primary-color);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import '../../../theme/mixings';
+
+.app-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 0 auto;
+    background-color: #F2F2F2;
+  }
+
+  .app-content {
+    background-color: var(--app-bg);
+    min-height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    &__padding{
+      overflow-y: scroll;
+      padding: 20px;
+      @include desktop {
+        padding: 40px;
+      }
+    }
+  }
+
+  .label-route{
+    font-size: 16px;
+    margin-bottom: 30px;
+    :nth-child(2){
+      color: var(--coink-primary-color)
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .sidebar {
+      display: none;
+    }
+  }

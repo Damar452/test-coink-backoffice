@@ -1,0 +1,21 @@
+.app-content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    background-color: var(--coink-primary-color);
+    color: var(--soft-light-color);
+    height: 63px;
+    max-width: 100vw;
+
+    .fa-bars{
+      margin-left: 20px;
+    }
+    .fa-user{
+      margin-right: 20px;
+    }
+
+    h3{
+      font-family: "Roboto Bold", sans-serif;
+    }
+  }

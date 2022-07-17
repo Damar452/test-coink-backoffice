@@ -1,0 +1,18 @@
+<div [ngClass]="'container ' + widthClass">
+    <table>
+        <tr>
+            <th class="header" *ngFor="let header of headers">
+                <div class="header__container">
+                    <span class="header__text roboto-bold">{{header.value}}</span>
+                    <button class="sort-button roboto-bold">
+                        <i class="fa-solid fa-sort"></i>
+                    </button>
+                </div>
+
+            </th>
+        </tr>
+        <tr class="row" *ngFor="let user of data">
+            <td class="row__td" *ngFor="let header of headers">{{user[header.key]}}</td>
+        </tr>
+    </table>
+</div>

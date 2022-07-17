@@ -1,0 +1,10 @@
+<div>
+  <button class="accordion" (click)="toggleAccordian(panel)"> {{data.parentName}}
+    <i [class]="'fa-solid fa-angle-'+ icon"></i>
+  </button>
+  <div #panel class="panel">
+    <div [class]="'option ' + isSelected(i)" *ngFor="let child of data.childs; let i = index" (click)="toogleChildren(i)">
+      <h4> {{child.value}} </h4>
+    </div>
+  </div>
+</div>

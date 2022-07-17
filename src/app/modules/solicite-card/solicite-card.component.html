@@ -1,0 +1,25 @@
+
+<h1 class="primary-title">SOLICITUD TARJETAS</h1>
+
+<button class="roboto-medium search">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    Buscar
+</button>
+
+<form class="form">
+    <div class="inputs">
+        <app-default-input inputClass="custom-input" label="Usuario"></app-default-input>
+        <app-default-input inputClass="custom-input" label="Fechas" placeholder="dia/mes/año - dia/mes/año"></app-default-input>
+    </div>
+    <div>
+        <button class="btn secondary-btn open-sans-bold">Limpiar filtros</button>
+        <button class="btn primary-btn open-sans-bold">Buscar</button>
+    </div>
+</form>
+
+<div class="solicite">
+    <button class="btn secondary-btn open-sans-bold" >Solicitar tarjetas</button>
+</div>
+
+<app-custom-table [headers]="tableHeaders" [data]="userList"></app-custom-table>
+

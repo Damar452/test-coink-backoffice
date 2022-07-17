@@ -1,0 +1,28 @@
+@import '../mixings';
+
+.container-error-message {
+    display: inline-block;
+    color: var(--error-color);
+    padding-left: 6px;
+    animation: fadeIn linear 0.7s;
+}
+
+.default-input{
+    border-radius: 6px;
+    border: 1px solid #bdbdbd;
+    height: 48px;
+    width: 100%;
+}
+
+.custom-input{
+    border:none !important;
+    border-bottom: 2px solid var(--soft-gray-color) !important;
+    padding: 5px 10px;
+    outline: none;
+    background-color: transparent;
+    width: 85vw;
+    @include desktop {
+        width: 90%;
+    }
+   
+}

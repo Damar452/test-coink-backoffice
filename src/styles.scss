@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "theme/fonts.scss";
+@import "theme/standarize.scss";
+@import "theme/components/_form.scss";
+@import "theme/components//buttons.scss";
+@import "theme/scroll";
+@import "theme/mixings";
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.montserrat-semibold {
+  font-family: "Montserrat SemiBold", sans-serif;
+}
+
+.montserrat-bold {
+  font-family: "Montserrat Bold", sans-serif;
+}
+
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.open-sans-bold {
+  font-family: "Open Sans Bold", sans-serif;
+}
+
+.avenir {
+  font-family: "Avenir", sans-serif;
+}
+
+.avenir-heavy {
+  font-family: "Avenir Heavy", sans-serif;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.roboto-medium {
+  font-family: "Roboto Medium", sans-serif;
+}
+
+.roboto-bold {
+  font-family: "Roboto Bold", sans-serif;
+}
+
+.primary-title{
+  font-family: "Roboto Bold", sans-serif;
+  color: var(--coink-primary-color);
+  font-size: 28px;
+}
+
+.primary {
+  color: var(--coink-primary-color);
+}
+
+.secondary {
+  color: var(--coink-secondary-color);
+}
+
+.tertiary {
+  color: var(--coink-tertiary-color);
+}
+
+.soft-black {
+  color: var(--soft-dark-color);
+}
+
+.link {
+  cursor: pointer;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label{
+  font-size: 14;
+}
+
+span{
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+}
+
+

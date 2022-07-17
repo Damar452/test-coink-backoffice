@@ -1,0 +1,76 @@
+@import "../../../theme/mixings";
+
+
+.header{
+  background-color: var(--coink-primary-color);
+  color: var(--soft-light-color);
+  font-family: "Roboto Bold", sans-serif;
+  padding: 15px;
+  position: sticky;
+  margin: 0;
+  top: 0;
+  &__container{
+    display: flex; 
+    justify-content: center;
+  }
+  span{
+    font-size: 14px;
+  }
+}
+
+.row{
+  font-family: "Roboto", sans-serif;
+  &__td{
+    padding: 20px;
+    font-size: 16px;
+  }
+
+}
+
+.container{
+  margin-top: 10px;
+  height: 240px;
+  overflow: scroll;
+}
+
+.mobile{
+  width: 90vw;
+}
+
+.desktop{
+  width: 100%;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: var(--soft-light-color);
+ 
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  font-size: 14px;
+  border: none;
+ 
+}
+
+td{
+  border-bottom: 1px solid var(--soft-gray-color);
+}
+
+
+.sort-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  i{
+    margin-left: 10px;
+  }
+  color: var(--app-content-main-color);
+}
+
+

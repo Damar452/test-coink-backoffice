@@ -1,0 +1,17 @@
+<div class="form-group">
+  <label class="avenir soft-black">{{ label }}</label>
+  <div class="inner-addon right-addon">
+    <i [class]="spanClass" (click)="touchIcon()"></i>
+    <input [class]="inputClass"
+      #input
+      [value]="valor"
+      [type]="type"
+      [placeholder]="placeholder"
+      [class.focus]="isFocus && !disabled"
+      [class.error]="validateInput()"
+      (focus)="onInputFocus()"
+      (blur)="onInputBlur()"
+      (change)="onInputChange(input.value)"
+    />
+  </div>
+</div>

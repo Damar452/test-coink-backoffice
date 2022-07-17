@@ -1,0 +1,37 @@
+.button-rounded {
+  width: 75%;
+  border-radius: 100px;
+  height: 45px;
+  background-color: var(--coink-secondary-color);
+  color: var(--soft-light-color);
+  border: none;
+  box-shadow: 0px 3px 10px var(--soft-shadow-color);
+}
+
+.button-rounded:disabled,
+.button-rounded[disabled] {
+  border: none;
+  background-color: var(--soft-gray-color);
+}
+
+.btn{
+  padding: 8px;
+  border: 2px solid var(--coink-primary-color);
+  font-size: 16px;
+  min-width: 150px;
+  margin-right: 20px;
+  margin: 5px;
+}
+
+.primary-btn{
+  color: var(--soft-light-color);
+  background-color: var(--coink-primary-color);
+}
+
+.secondary-btn{
+  color: var(--coink-primary-color);
+}
+
+.secondary-btn:hover{
+  @extend .primary-btn;
+}

@@ -43,7 +43,37 @@
       }
     }
   }
+
+  &__footer{
+    position: sticky; 
+    bottom: 0;
+    height: 20px;
+    display: flex;
+    padding: 20px;
+    
+    background-color:var(--soft-light-color);
+    border-top: 1px solid var(--coink-gray-medium-color);
+    justify-content: space-between;
+    &__label{
+      font-size: 14px;
+      color: var(--coink-grey-text);
+    }
+    &__paginator{
+      display: flex;
+    }
+
+    .numbers{
+      padding: 0 10px;
+    }
+
+    .directionals{
+      padding: 0 10px;
+      font-size: 20px;
+      color: var(--coink-strong-green);
+    }
+  }
 }
+
 
 td,
 th {

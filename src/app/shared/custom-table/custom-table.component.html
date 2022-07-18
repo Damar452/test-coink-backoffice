@@ -1,20 +1,35 @@
-<div [ngClass]="'container ' + widthClass">
-  <table class="container__table">
-    <tr>
-      <th class="container__table__header" *ngFor="let header of headers">
-        <div class="head roboto-bold">
-          <span class="roboto-bold">{{header.value}}</span>
-          <button class="head__sort-button roboto-bold">
-            <i class="fa-solid fa-sort"></i>
-          </button>
-        </div>
-
-      </th>
-    </tr>
-    <tr class="container__table__row" *ngFor="let user of data">
-      <td class="td roboto" *ngFor="let header of headers">{{user[header.key]}}</td>
-    </tr>
+<div [ngClass]="'container ' + widthClass" >
+  <table class="container__table" >
+    <thead>
+      <tr>
+        <th class="container__table__header" *ngFor="let header of headers">
+          <div class="head roboto-bold" >
+            <span class="roboto-bold">{{header.value}}</span>
+            <button class="head__sort-button roboto-bold">
+              <i class="fa-solid fa-sort"></i>
+            </button>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="container__table__row" *ngFor="let user of data">
+        <td class="td roboto" *ngFor="let header of headers">{{user[header.key]}}</td>
+      </tr>
+    </tbody>
   </table>
+  <div class="container__footer">
+    <div class="container__footer__label roboto " >
+      Mostrando {{data.length}} de {{info.count}}
+    </div>
+    <div class="container__footer__paginator" >
+      <i class="fa fa-angle-left  directionals" ></i>
+      <div class="numbers">1</div>
+      <div class="numbers">2</div>
+      <i class="fa fa-angle-right  directionals"></i>
+    </div>
+
+  </div>
   <div *ngIf="data.length <= 0">
     <h4 class="roboto flex-center">
       No se hallaron Registros

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Info } from 'src/app/core/models/character-model';
 import { Header } from 'src/app/core/models/table-model';
 
 @Component({
@@ -13,6 +14,7 @@ export class CustomTableComponent implements OnInit {
 
   @Input() headers: Header[];
   @Input() data: any[];
+  @Input() info: Info;
   public widthClass: string;
 
   ngOnInit(): void {

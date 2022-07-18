@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { headers } from 'src/app/core/constants/solicite-card';
-import { Character } from 'src/app/core/models/character-model';
+import { Character, Info } from 'src/app/core/models/character-model';
 import { Header } from 'src/app/core/models/table-model';
 import { DataService } from 'src/app/core/services/data.service';
 
@@ -14,6 +14,7 @@ export class SoliciteCardComponent implements OnInit {
 
   public searchForm: FormGroup;
   public characterList: Character[] = [];
+  public infoTable: Info;
   public tableHeaders: Header[] = headers;
   public modalForm: boolean = false;
   public modalConfirm: boolean = false;
@@ -32,8 +33,7 @@ export class SoliciteCardComponent implements OnInit {
 
   public getCharacters(): void{
     this.dataDemo.getCharacters().subscribe((data) => {
-      const { info, results } = data;
-      this.setData(results);
+      this.setData(data.info, data.results);
     });
   }
 
@@ -53,7 +53,7 @@ export class SoliciteCardComponent implements OnInit {
     const { character, type } = this.searchForm.controls;
     this.dataDemo.filterCharacters(character.value, type.value).subscribe({
       next: (data) => {
-        this.setData(data.results);
+        this.setData(data.info, data.results);
       },
       error: () => {
         this.characterList = [];
@@ -61,8 +61,9 @@ export class SoliciteCardComponent implements OnInit {
     })
   }
 
-  private setData(results: Character[]): void{
+  private setData(info: Info, results: Character[]): void{
     this.characterList = results;
+    this.infoTable = info;
   }
 
   private hideModals(): void{

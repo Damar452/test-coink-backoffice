@@ -11,8 +11,8 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  public getCharacters(): Observable<Characters>{
-    return this.http.get<Characters>(`${environment.API}character?page=1`);
+  public getCharacters(page: string = '1'): Observable<Characters>{
+    return this.http.get<Characters>(`${environment.API}character?page=${page}`);
   }
 
   public filterCharacters(name: string, type: string): Observable<Characters>{

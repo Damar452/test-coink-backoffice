@@ -21,10 +21,10 @@ export class DefaultInputComponent {
   @Input() label : string = '';
   @Input() type: string = 'text';
   @Input() inputName:string;
-  @Input() valor:string = "";
-  @Input() placeholder: string = "";
-  @Input() icon: string = "";
-  @Input() inputClass: string = "";
+  @Input() valor:string = '';
+  @Input() placeholder: string = '';
+  @Input() icon: string = '';
+  @Input() inputClass: string = '';
 
   @Output() onClickIcon: EventEmitter<boolean> = new EventEmitter();
 

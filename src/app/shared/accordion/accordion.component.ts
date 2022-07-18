@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { items } from 'src/app/core/constants/accordion-constants';
 import { statesAccordion } from 'src/app/core/enums/acorddion-enum';
+import { accordionData } from 'src/app/core/models/accordion-model';
 
 @Component({
   selector: 'app-accordion',
@@ -9,7 +10,7 @@ import { statesAccordion } from 'src/app/core/enums/acorddion-enum';
 })
 export class AccordionComponent{
 
-  public data: any = items;
+  public data: accordionData = items;
   public selected: number;
   public icon: string = statesAccordion.down;
 

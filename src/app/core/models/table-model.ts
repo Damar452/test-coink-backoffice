@@ -1,5 +1,5 @@
 
-export type Header = {
+export interface Header {
   key: string,
   value: string
 }

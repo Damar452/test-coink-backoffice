@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() title: string = "BACKOFFICE";
+  @Input() title: string = 'BACKOFFICE';
 
   @Output() onChange = new EventEmitter<boolean>()
 

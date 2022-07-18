@@ -5,15 +5,27 @@
     <i class="fa-solid fa-magnifying-glass"></i>
     Buscar
   </button>
-  <form class="form">
+  <form class="form" [formGroup]="searchForm" (ngSubmit)="onSearch()">
     <div class="inputs">
-      <app-default-input inputClass="custom-input" label="Usuario"></app-default-input>
-      <app-default-input inputClass="custom-input" label="Fechas" placeholder="dia/mes/año - dia/mes/año">
+      <app-default-input 
+      [form]="searchForm"  
+      formControlName="character" 
+      inputName="character" 
+      inputClass="custom-input" 
+      label="Personaje"
+      ></app-default-input>
+
+      <app-default-input 
+      [form]="searchForm" 
+      formControlName="type" 
+      inputName="type"
+      inputClass="custom-input"
+      label="Tipo" >
       </app-default-input>
     </div>
     <div>
-      <button class="btn secondary-btn open-sans-bold">Limpiar filtros</button>
-      <button class="btn primary-btn open-sans-bold">Buscar</button>
+      <button class="btn secondary-btn open-sans-bold" type="reset" (click)="getCharacters()">Limpiar filtros</button>
+      <button class="btn primary-btn open-sans-bold" type="submit">Buscar</button>
     </div>
   </form>
   <div class="solicite">
@@ -29,12 +41,20 @@
       (onClose)="modalForm = false" (onSend)="openConfirm($event)"></app-modal-form>
   </div>
   
-  <div *ngIf="modalContent">
+  <div *ngIf="modalConfirm">
     <app-modal-contents title="CONFIRMACIÓN DE SOLICITUD DE TARJETAS"
-    (onClose)="modalContent = false">
-      <h4 class="roboto" style="text-align:center">Estás a punto de solicitar {{value}} tarjetas, <br>
+    (onClose)="modalConfirm = false" (onSend)="openSuccess()">
+      <h4 class="roboto">Estás a punto de solicitar {{value}} tarjetas, <br>
         confirma esta acción para terminar tu <br> pedido
       </h4>
+    </app-modal-contents>
+  </div>
+
+  <div *ngIf="modalSuccess">
+    <app-modal-contents [buttons]="false" class="roboto">
+      <img src="assets/images/success-icon.png" alt="success">
+      <h2>TU SOLICITUD FUE RECIBIDA</h2>
+      <h4>Solicitaste {{value}} tarjetas</h4>
     </app-modal-contents>
   </div>
 

@@ -6,7 +6,7 @@
       <div class="modal-body">
           <div class="flex-center">
             <ng-content></ng-content>
-            <div>
+            <div *ngIf="buttons">
                 <button class="btn secondary-btn open-sans-bold" (click)="close()">Cancelar</button>
                 <button class="btn primary-btn open-sans-bold"  (click)="send()" >Confirmar</button>
             </div>

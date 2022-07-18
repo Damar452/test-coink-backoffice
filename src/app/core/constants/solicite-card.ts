@@ -1,7 +1,7 @@
 
 export const headers = [
-  { key: 'name', value: 'Usuario' },
-  { key: 'cardNumbers', value: 'Número de tarjetas solicitadas' },
-  { key: 'dateHour', value: 'Fecha-Hora' },
+  { key: 'name', value: 'Personaje' },
+  { key: 'gender', value: 'Género' },
+  { key: 'species', value: 'Especie' },
   { key: 'status', value: 'Estado' }
 ]

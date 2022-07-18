@@ -4,6 +4,7 @@ import { SoliciteCardComponent } from './solicite-card.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { SoliciteCardPageRoutingModule } from './solicite-card.routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,6 +13,7 @@ import { SoliciteCardPageRoutingModule } from './solicite-card.routing.module';
   imports: [
     CommonModule,
     SharedModule,
+    ReactiveFormsModule,
     SoliciteCardPageRoutingModule
   ]
 })

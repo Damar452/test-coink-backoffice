@@ -15,4 +15,9 @@
             <td class="row__td" *ngFor="let header of headers">{{user[header.key]}}</td>
         </tr>
     </table>
+    <div *ngIf="data.length <= 0" >
+        <h4 class="roboto flex-center">
+            No se hallaron Registros
+        </h4>
+    </div>
 </div>

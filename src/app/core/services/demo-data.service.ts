@@ -12,4 +12,8 @@ export class DemoDataService {
   public getCharacters(){
     return this.http.get<any>(`${environment.API}character?page=1`);
   }
+
+  public filterCharacters(name: string, type: string){
+    return this.http.get<any>(`${environment.API}character?name=${name}&type=${type}`);
+  }
 }

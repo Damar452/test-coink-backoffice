@@ -32,7 +32,6 @@ export class SoliciteCardComponent implements OnInit {
 
   public getCharacters(): void{
     this.dataDemo.getCharacters().subscribe((data) => {
-      console.log(data)
       const { info, results } = data;
       this.setData(results);
     });

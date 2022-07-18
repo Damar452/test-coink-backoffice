@@ -3,7 +3,7 @@
 .container {
   margin-top: 10px;
   height: 300px;
-  overflow: scroll;
+  overflow-y: scroll;
 
   &__table {
     border-collapse: collapse;

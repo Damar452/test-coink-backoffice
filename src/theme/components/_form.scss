@@ -1,15 +1,8 @@
 @import '../mixings';
 
-.container-error-message {
-    display: inline-block;
-    color: var(--error-color);
-    padding-left: 6px;
-    animation: fadeIn linear 0.7s;
-}
-
 .default-input{
     border-radius: 6px;
-    border: 1px solid #bdbdbd;
+    border: 1.5px solid var(--soft-gray-color);
     height: 48px;
     width: 100%;
 }

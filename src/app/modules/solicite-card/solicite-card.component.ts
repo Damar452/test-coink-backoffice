@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { headers } from 'src/app/core/constants/solicite-card';
-import { userDemo } from 'src/app/core/models/user-demo';
-import { DemoDataService } from 'src/app/core/services/demo-data.service';
+import { Character } from 'src/app/core/models/character-model';
+import { Header } from 'src/app/core/models/table-model';
+import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
   selector: 'app-solicite-card',
@@ -12,15 +13,15 @@ import { DemoDataService } from 'src/app/core/services/demo-data.service';
 export class SoliciteCardComponent implements OnInit {
 
   public searchForm: FormGroup;
-  public tableHeaders: any[] = headers;
-  public userList: any = [];
+  public characterList: Character[] = [];
+  public tableHeaders: Header[] = headers;
   public modalForm: boolean = false;
   public modalConfirm: boolean = false;
   public modalSuccess: boolean = false;
   public value: string;
 
   constructor(
-    private dataDemo: DemoDataService,
+    private dataDemo: DataService,
     private formBuild: FormBuilder,
   ) { }
 
@@ -31,6 +32,7 @@ export class SoliciteCardComponent implements OnInit {
 
   public getCharacters(): void{
     this.dataDemo.getCharacters().subscribe((data) => {
+      console.log(data)
       const { info, results } = data;
       this.setData(results);
     });
@@ -55,16 +57,13 @@ export class SoliciteCardComponent implements OnInit {
         this.setData(data.results);
       },
       error: () => {
-        this.userList = [];
+        this.characterList = [];
       }
     })
   }
 
-  private setData(results: any): void{
-    this.userList = results.map((user: any) => {
-      const { id, name, gender, species, status } = user;
-      return { id, name, gender, species, status };
-    })
+  private setData(results: Character[]): void{
+    this.characterList = results;
   }
 
   private hideModals(): void{

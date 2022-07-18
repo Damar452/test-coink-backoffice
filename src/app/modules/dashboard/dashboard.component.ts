@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   host: {
-    '(window:resize)': 'onResize($event)'
+    '(window:resize)': 'onResize($event.target)'
   }
 })
 export class DashboardComponent implements OnInit {
@@ -22,8 +22,8 @@ export class DashboardComponent implements OnInit {
     this.isShow = !this.isShow;
   }
 
-  onResize(event: any): void {
-    this.setView(event.target.innerWidth);
+  onResize(target: Window): void {
+    this.setView(target.innerWidth);
   }
 
   private setView(width: number): void{

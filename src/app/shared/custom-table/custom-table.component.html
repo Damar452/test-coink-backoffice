@@ -24,7 +24,12 @@
     </div>
     <div class="container__footer__paginator" >
       <i class="fa fa-angle-left  directionals" (click)="prev()"></i>
-      <div class="numbers roboto-bold" (click)="selectNumber(item)" [ngClass]="(item == indexPage) ? ' background' : ''"  *ngFor="let item of rangePage">{{item}}</div>
+      <div class="numbers roboto-bold"
+      [ngClass]="(item == indexPage) ? ' background' : ''" 
+      (click)="selectNumber(item)"   
+      *ngFor="let item of rangePage">
+      {{item}}
+      </div>
       <i class="fa fa-angle-right directionals" (click)="next()"></i>
     </div>
 

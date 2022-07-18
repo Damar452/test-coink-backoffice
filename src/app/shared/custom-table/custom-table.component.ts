@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { Info } from 'src/app/core/models/character-model';
 import { Header } from 'src/app/core/models/table-model';
 
@@ -12,11 +12,10 @@ import { Header } from 'src/app/core/models/table-model';
 })
 export class CustomTableComponent implements OnChanges {
 
-  // @ViewChild('number') divNumber: ElementRef;
-
   @Input() headers: Header[];
   @Input() data: any[];
   @Input() info: Info;
+  @Output() onChangePage: EventEmitter<number> = new EventEmitter();
   public widthClass: string;
   public pagesArray: number[];
   public indexPage: number = 1;
@@ -73,6 +72,7 @@ export class CustomTableComponent implements OnChanges {
   }
 
   private changeRange(){
+    this.onChangePage.emit(this.indexPage);
     const include = this.rangePage.includes(this.indexPage);
     !include && this.setRange(this.indexPage, 5);
   }

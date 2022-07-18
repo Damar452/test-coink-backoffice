@@ -31,8 +31,8 @@ export class SoliciteCardComponent implements OnInit {
     this.createForm();
   }
 
-  public getCharacters(): void{
-    this.dataDemo.getCharacters().subscribe((data) => {
+  public getCharacters(page: string | number = '1'): void{
+    this.dataDemo.getCharacters(page).subscribe((data) => {
       this.setData(data.info, data.results);
     });
   }

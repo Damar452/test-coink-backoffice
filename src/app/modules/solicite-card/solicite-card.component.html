@@ -18,7 +18,7 @@
   <div class="container__solicite">
     <button class="btn secondary-btn open-sans-bold" (click)="modalForm = true">Solicitar tarjetas</button>
   </div>
-  <app-custom-table [headers]="tableHeaders" [data]="characterList" [info]="infoTable"></app-custom-table>
+  <app-custom-table [headers]="tableHeaders" [data]="characterList" [info]="infoTable" (onChangePage)="this.getCharacters($event)"></app-custom-table>
 </div>
 
 

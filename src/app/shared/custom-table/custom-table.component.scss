@@ -44,37 +44,47 @@
     }
   }
 
-  &__footer{
-    position: sticky; 
+  &__footer {
+    position: sticky;
     bottom: 0;
     height: 20px;
     display: flex;
     padding: 20px;
-    
-    background-color:var(--soft-light-color);
+
+    background-color: var(--soft-light-color);
     border-top: 1px solid var(--coink-gray-medium-color);
     justify-content: space-between;
-    &__label{
+    &__label {
       font-size: 14px;
       color: var(--coink-grey-text);
     }
-    &__paginator{
+    &__paginator {
       display: flex;
     }
 
-    .numbers{
-      padding: 0 10px;
+    .numbers {
+      padding: 2px 8px 10px 8px;
+      height: 10px;
+      border-radius: 2px;
       color: var(--coink-primary-color);
+      margin: 0 6px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
-    .directionals{
+    .background {
+      background-color: var(--coink-strong-green);
+    }
+
+    .directionals {
       padding: 0 10px;
       font-size: 20px;
       color: var(--coink-strong-green);
     }
   }
 }
-
 
 td,
 th {

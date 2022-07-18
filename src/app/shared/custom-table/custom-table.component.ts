@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Info } from 'src/app/core/models/character-model';
 import { Header } from 'src/app/core/models/table-model';
 
@@ -10,15 +10,25 @@ import { Header } from 'src/app/core/models/table-model';
     '(window:resize)': 'onResize($event.target)'
   }
 })
-export class CustomTableComponent implements OnInit {
+export class CustomTableComponent implements OnChanges {
+
+  // @ViewChild('number') divNumber: ElementRef;
 
   @Input() headers: Header[];
   @Input() data: any[];
   @Input() info: Info;
   public widthClass: string;
+  public pagesArray: number[];
+  public indexPage: number = 1;
+  public rangePage: number[];
 
-  ngOnInit(): void {
-   this.setwidth(screen.width);
+  constructor(){
+
+  }
+
+  ngOnChanges(): void {
+    this.setwidth(screen.width);
+    this.setpageArray();
   }
 
   onResize(target: Window){
@@ -27,6 +37,44 @@ export class CustomTableComponent implements OnInit {
 
   setwidth(width: number): void{
     this.widthClass = (width >= 1024) ? 'desktop' : 'mobile';
+  }
+
+  private setpageArray(){
+    this.pagesArray = new Array(this.info?.pages);
+    for (let index = 0; index < this.pagesArray.length; index++) {
+      this.pagesArray?.fill(index + 1 , index);
+    }
+    const range = this.info?.pages >= 5 ? 5 : this.info?.pages;
+    this.setRange(1, range);
+  }
+
+  public next(){
+    const index = this.pagesArray;
+    if( this.indexPage  < index[index.length - 1]){
+      this.indexPage++;
+      this.changeRange();
+    }
+  }
+
+  public prev(){
+    if(this.indexPage > 1){
+      this.indexPage--;
+      this.changeRange();
+    }
+  }
+
+  public selectNumber(num: number){
+    this.indexPage = num;
+  }
+
+  private setRange(initial: number, range: number){
+    initial = initial - 1;
+    this.rangePage = this.pagesArray?.slice(initial , initial + range);
+  }
+
+  private changeRange(){
+    const include = this.rangePage.includes(this.indexPage);
+    !include && this.setRange(this.indexPage, 5);
   }
 
 }

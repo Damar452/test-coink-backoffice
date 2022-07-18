@@ -29,26 +29,26 @@ export class SoliciteCardComponent implements OnInit {
     this.createForm();
   }
 
-  public getCharacters() {
+  public getCharacters(): void{
     this.dataDemo.getCharacters().subscribe((data) => {
       const { info, results } = data;
       this.setData(results);
     });
   }
 
-  public openConfirm(value: string) {
+  public openConfirm(value: string): void{
     this.value = value;
     this.modalConfirm = true;
   }
 
-  public openSuccess() {
+  public openSuccess(): void{
     this.modalSuccess = true;
     setTimeout(() => {
       this.hideModals()
     }, 1000);
   }
 
-  public onSearch() {
+  public onSearch(): void {
     const { character, type } = this.searchForm.controls;
     this.dataDemo.filterCharacters(character.value, type.value).subscribe({
       next: (data) => {
@@ -60,14 +60,14 @@ export class SoliciteCardComponent implements OnInit {
     })
   }
 
-  private setData(results: any) {
+  private setData(results: any): void{
     this.userList = results.map((user: any) => {
       const { id, name, gender, species, status } = user;
       return { id, name, gender, species, status };
     })
   }
 
-  private hideModals(){
+  private hideModals(): void{
     this.modalSuccess = false;
     this.modalConfirm = false;
     this.modalForm = false;

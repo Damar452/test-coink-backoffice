@@ -16,10 +16,10 @@ import { FormService } from 'src/app/core/services/form.service';
 })
 export class DefaultInputComponent {
 
+  @Input() form: FormGroup;
+  @Input() disabled: boolean = false;
   @Input() label : string = '';
   @Input() type: string = 'text';
-  @Input() disabled: boolean = false;
-  @Input() form: FormGroup;
   @Input() inputName:string;
   @Input() valor:string = "";
   @Input() placeholder: string = "";

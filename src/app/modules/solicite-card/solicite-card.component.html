@@ -7,20 +7,11 @@
   </button>
   <form class="form" [formGroup]="searchForm" (ngSubmit)="onSearch()">
     <div class="inputs">
-      <app-default-input 
-      [form]="searchForm"  
-      formControlName="character" 
-      inputName="character" 
-      inputClass="custom-input" 
-      label="Personaje"
-      ></app-default-input>
+      <app-default-input [form]="searchForm" formControlName="character" inputName="character" inputClass="custom-input"
+        label="Personaje"></app-default-input>
 
-      <app-default-input 
-      [form]="searchForm" 
-      formControlName="type" 
-      inputName="type"
-      inputClass="custom-input"
-      label="Tipo" >
+      <app-default-input [form]="searchForm" formControlName="type" inputName="type" inputClass="custom-input"
+        label="Tipo">
       </app-default-input>
     </div>
     <div>
@@ -40,10 +31,10 @@
     <app-modal-form title="SOLICITAR TARJETAS" label="Número de tarjetas que quiere solicitar"
       (onClose)="modalForm = false" (onSend)="openConfirm($event)"></app-modal-form>
   </div>
-  
+
   <div *ngIf="modalConfirm">
-    <app-modal-contents title="CONFIRMACIÓN DE SOLICITUD DE TARJETAS"
-    (onClose)="modalConfirm = false" (onSend)="openSuccess()">
+    <app-modal-contents title="CONFIRMACIÓN DE SOLICITUD DE TARJETAS" (onClose)="modalConfirm = false"
+      (onSend)="openSuccess()">
       <h4 class="roboto">Estás a punto de solicitar {{value}} tarjetas, <br>
         confirma esta acción para terminar tu <br> pedido
       </h4>
@@ -59,4 +50,3 @@
   </div>
 
 </div>
-

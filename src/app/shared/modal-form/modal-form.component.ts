@@ -21,11 +21,11 @@ export class ModalFormComponent implements OnInit {
     this.createForm();
   }
 
-  close(){
+  public close(): void{
     this.onClose.emit();
   }
 
-  send(){
+  public send(): void{
     this.onSend.emit(this.cardsForm.get('amount')!.value);
   }
 

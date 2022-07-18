@@ -5,17 +5,11 @@
     </div>
     <div class="modal-body">
       <form [formGroup]="cardsForm" (ngSubmit)="send()">
-        <app-default-input 
-        [form]="cardsForm"
-        [label]="label"
-        type="number"
-        inputClass="custom-input roboto-medium" 
-        formControlName="amount" 
-        inputName="amount"
-        ></app-default-input>
+        <app-default-input [form]="cardsForm" [label]="label" type="number" inputClass="custom-input roboto-medium"
+          formControlName="amount" inputName="amount"></app-default-input>
         <div class="flex-center">
           <button class="btn secondary-btn open-sans-bold" (click)="close()">Cancelar</button>
-          <button class="btn primary-btn open-sans-bold" type="submit" [disabled]="cardsForm.invalid" >Solicitar</button>
+          <button class="btn primary-btn open-sans-bold" type="submit" [disabled]="cardsForm.invalid">Solicitar</button>
         </div>
       </form>
     </div>

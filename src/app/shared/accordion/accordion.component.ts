@@ -13,25 +13,20 @@ export class AccordionComponent{
   public selected: number;
   public icon: string = statesAccordion.down;
 
-  public toggleAccordian(panel: any) {
-    
+  public toggleAccordian(panel: any): void{
     this.data.isActive = !this.data.isActive;
-
-    if(panel.style.maxHeight){
-      panel.style.maxHeight = null;
-      this.icon = statesAccordion.down;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-      this.icon = statesAccordion.up; 
-    }
+    const maxHeight = panel.style.maxHeight;
+    panel.style.maxHeight = maxHeight ? null : panel.scrollHeight + 'px';
+    this.icon = maxHeight ? statesAccordion.down : statesAccordion.up;
   }
 
-  public toogleChildren(index: number){
+  public toogleChildren(index: number): void{
     this.selected = index;
   }
 
-  public isSelected(index: number){
+  public isSelected(index: number): string{
     return index === this.selected ? 'active' : '';
   }
+
 
 }

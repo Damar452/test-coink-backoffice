@@ -18,15 +18,15 @@ export class DashboardComponent implements OnInit {
     this.setView(screen.width);
   }
 
-  public changeSidebar(){
+  public changeSidebar(): void{
     this.isShow = !this.isShow;
   }
 
-  onResize(event: any){
+  onResize(event: any): void {
     this.setView(event.target.innerWidth);
   }
 
-  setView(width: number){
+  private setView(width: number): void{
     this.isShow = (width >= 1024) ? true : false;
   }
 

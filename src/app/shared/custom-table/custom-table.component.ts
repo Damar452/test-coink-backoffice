@@ -10,11 +10,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CustomTableComponent implements OnInit {
 
-  public widthClass: string;
   @Input() headers: any[];
   @Input() data: any[];
-
-  constructor() { }
+  public widthClass: string;
 
   ngOnInit(): void {
    this.setwidth(screen.width);
@@ -25,7 +23,7 @@ export class CustomTableComponent implements OnInit {
     this.setwidth(width);
   }
 
-  setwidth(width: number){
+  setwidth(width: number): void{
     this.widthClass = (width >= 1024) ? 'desktop' : 'mobile';
   }
 

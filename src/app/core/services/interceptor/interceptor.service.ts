@@ -13,7 +13,6 @@ export class InterceptorService implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((err: any) => {
         return throwError(() => err);
-
       })
     );
 

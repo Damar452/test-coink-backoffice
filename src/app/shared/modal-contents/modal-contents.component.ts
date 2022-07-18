@@ -18,11 +18,11 @@ export class ModalContentsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public send(){
+  public send(): void{
     this.onSend.emit();
   }
 
-  public close(){
+  public close(): void{
     this.onClose.emit();
   }
 

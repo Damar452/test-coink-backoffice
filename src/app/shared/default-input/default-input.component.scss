@@ -1,15 +1,13 @@
 .form-group {
- 
+  margin-bottom: 30px;
   input {
     margin-top: 5px;
     padding-left: 10px;
-
     &.focus {
       border: 1px solid var(--coink-primary-color);
       outline-offset: 0px !important;
       outline: none !important;
     }
-
     &.error {
       border: 1px solid var(--error-color);
     }
@@ -18,15 +16,11 @@
   .inner-addon {
     position: relative;
   }
-
   .right-addon .fa-solid {
     right: 0px;
   }
-
   .inner-addon .fa-solid {
     position: absolute;
     padding: 21px 10px 0 0;
   }
-
-  margin-bottom: 30px;
 }

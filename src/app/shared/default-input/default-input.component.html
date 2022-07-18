@@ -1,8 +1,8 @@
 <div class="form-group">
   <label class="avenir soft-black">{{ label }}</label>
   <div class="inner-addon right-addon">
-    <i [class]="spanClass" (click)="touchIcon()"></i>
-    <input [class]="inputClass"
+    <i [ngClass]="spanClass" (click)="touchIcon()"></i>
+    <input [ngClass]="inputClass"
       #input
       [value]="valor"
       [type]="type"

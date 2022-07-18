@@ -1,18 +1,12 @@
-<div class="app-container">
-
-  <app-sidebar *ngIf="isShow" ></app-sidebar>
-
-  <div class="app-content">
-    <app-header (onChange)="changeSidebar()" ></app-header>
-    <div class="app-content__padding">
-
-        <div class="roboto-medium label-route" >
-          <label>Tarjetas Visa Dispensadores</label> / <label>Solicitud tarjetas</label> 
-        </div>
-
+<div class="container">
+  <app-sidebar *ngIf="isShow"></app-sidebar>
+  <div class="container__content">
+    <app-header (onChange)="changeSidebar()"></app-header>
+    <div class="container__content__padding">
+      <div class="label-route roboto-medium">
+        <label>Tarjetas Visa Dispensadores</label> / <label>Solicitud tarjetas</label>
+      </div>
       <router-outlet></router-outlet>
-
     </div>
-
   </div>
 </div>

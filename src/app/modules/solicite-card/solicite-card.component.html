@@ -1,15 +1,11 @@
 <h1 class="primary-title">SOLICITUD TARJETAS</h1>
 
-<div *ngIf="!modalForm">
-  <button class="roboto-medium search">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    Buscar
-  </button>
-  <form class="form" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+<div class="container" *ngIf="!modalForm">
+  <button class="container__search roboto-medium"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
+  <form class="container__form" [formGroup]="searchForm" (ngSubmit)="onSearch()">
     <div class="inputs">
       <app-default-input [form]="searchForm" formControlName="character" inputName="character" inputClass="custom-input"
         label="Personaje"></app-default-input>
-
       <app-default-input [form]="searchForm" formControlName="type" inputName="type" inputClass="custom-input"
         label="Tipo">
       </app-default-input>
@@ -19,7 +15,7 @@
       <button class="btn primary-btn open-sans-bold" type="submit">Buscar</button>
     </div>
   </form>
-  <div class="solicite">
+  <div class="container__solicite">
     <button class="btn secondary-btn open-sans-bold" (click)="modalForm = true">Solicitar tarjetas</button>
   </div>
   <app-custom-table [headers]="tableHeaders" [data]="characterList"></app-custom-table>
@@ -48,5 +44,4 @@
       <h4>Solicitaste {{value}} tarjetas</h4>
     </app-modal-contents>
   </div>
-
 </div>

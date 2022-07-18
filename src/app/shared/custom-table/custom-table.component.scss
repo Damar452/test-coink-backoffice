@@ -1,76 +1,61 @@
 @import "../../../theme/mixings";
 
-
-.header{
-  background-color: var(--coink-primary-color);
-  color: var(--soft-light-color);
-  font-family: "Roboto Bold", sans-serif;
-  padding: 15px;
-  position: sticky;
-  margin: 0;
-  top: 0;
-  &__container{
-    display: flex; 
-    justify-content: center;
-  }
-  span{
-    font-size: 14px;
-  }
-}
-
-.row{
-  font-family: "Roboto", sans-serif;
-  &__td{
-    padding: 20px;
-    font-size: 16px;
-  }
-
-}
-
-.container{
+.container {
   margin-top: 10px;
   height: 300px;
   overflow: scroll;
+
+  &__table {
+    border-collapse: collapse;
+    background-color: var(--soft-light-color);
+    width: 100%;
+    &__header {
+      background-color: var(--coink-primary-color);
+      color: var(--soft-light-color);
+      padding: 15px;
+      position: sticky;
+      margin: 0;
+      top: 0;
+      .head {
+        display: flex;
+        justify-content: center;
+        &__sort-button {
+          padding: 0;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          i {
+            margin-left: 10px;
+          }
+          color: var(--app-content-main-color);
+        }
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+
+    &__row {
+      .td {
+        padding: 20px;
+        font-size: 16px;
+        border-bottom: 1px solid var(--soft-gray-color);
+      }
+    }
+  }
 }
 
-.mobile{
-  width: 90vw;
-}
-
-.desktop{
-  width: 100%;
-}
-
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  background-color: var(--soft-light-color);
- 
-}
-
-td, th {
-  border: 1px solid #dddddd;
+td,
+th {
   text-align: center;
   font-size: 14px;
   border: none;
- 
 }
 
-td{
-  border-bottom: 1px solid var(--soft-gray-color);
+.mobile {
+  width: 90vw;
 }
 
-
-.sort-button {
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  i{
-    margin-left: 10px;
-  }
-  color: var(--app-content-main-color);
+.desktop {
+  width: 100%;
 }
-
-

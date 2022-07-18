@@ -1,8 +1,8 @@
-<div>
-  <button class="accordion" (click)="toggleAccordian(panel)"> {{data.parentName}}
+<div class="container">
+  <button class="container__accordion avenir-heavy" (click)="toggleAccordian(panel)"> {{data.parentName}}
     <i [class]="'fa-solid fa-angle-'+ icon"></i>
   </button>
-  <div #panel class="panel">
+  <div #panel class="container__panel avenir-heavy">
     <div [class]="'option ' + isSelected(i)" *ngFor="let child of data.childs; let i = index" (click)="toogleChildren(i)">
       <h4> {{child.value}} </h4>
     </div>

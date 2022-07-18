@@ -12,7 +12,6 @@ export class ModalContentsComponent implements OnInit {
   @Output() onClose: EventEmitter<boolean> = new EventEmitter();
   @Output() onSend: EventEmitter<string> = new EventEmitter();
 
-
   constructor() { }
 
   ngOnInit(): void {

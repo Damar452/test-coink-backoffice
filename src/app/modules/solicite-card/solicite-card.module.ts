@@ -6,8 +6,6 @@ import { RouterModule } from '@angular/router';
 import { SoliciteCardPageRoutingModule } from './solicite-card.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [SoliciteCardComponent],
   imports: [

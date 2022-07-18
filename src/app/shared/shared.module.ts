@@ -9,8 +9,6 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { ModalFormComponent } from './modal-form/modal-form.component';
 import { ModalContentsComponent } from './modal-contents/modal-contents.component';
 
-
-
 @NgModule({
   declarations: [
     DefaultInputComponent,

@@ -5,8 +5,6 @@ import { dashboardRouting } from './dashboard-routing.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
-
 @NgModule({
   declarations: [
     DashboardComponent,

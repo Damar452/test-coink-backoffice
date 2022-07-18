@@ -11,7 +11,6 @@ export class HeaderComponent implements OnInit {
 
   @Output() onChange = new EventEmitter<boolean>()
 
-
   constructor() { }
 
   ngOnInit(): void {

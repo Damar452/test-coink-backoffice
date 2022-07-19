@@ -14,7 +14,8 @@ export class SoliciteCardComponent implements OnInit {
 
   public searchForm: FormGroup;
   public characterList: Character[] = [];
-  public infoTable: Info;
+  public pagesTable: number;
+  public count: number;
   public tableHeaders: Header[] = headers;
   public modalForm: boolean = false;
   public modalConfirm: boolean = false;
@@ -33,7 +34,7 @@ export class SoliciteCardComponent implements OnInit {
 
   public getCharacters(page: string | number = '1'): void{
     this.dataDemo.getCharacters(page).subscribe((data) => {
-      this.setData(data.info, data.results);
+      this.setData(data.results, data.info);
     });
   }
 
@@ -53,7 +54,7 @@ export class SoliciteCardComponent implements OnInit {
     const { character, type } = this.searchForm.controls;
     this.dataDemo.filterCharacters(character.value, type.value).subscribe({
       next: (data) => {
-        this.setData(data.info, data.results);
+        this.setData(data.results, data.info);
       },
       error: () => {
         this.characterList = [];
@@ -61,9 +62,10 @@ export class SoliciteCardComponent implements OnInit {
     })
   }
 
-  private setData(info: Info, results: Character[]): void{
+  private setData(results: Character[], info?: Info): void{
     this.characterList = results;
-    this.infoTable = info;
+    this.pagesTable = info!.pages;
+    this.count = info!.count;
   }
 
   private hideModals(): void{

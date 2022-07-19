@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ModalContentsComponent implements OnInit {
 
   @Input() title: string;
+  @Input() class: string = 'modal-dashboard';
   @Input() buttons: boolean = true;
   @Output() onClose: EventEmitter<boolean> = new EventEmitter();
   @Output() onSend: EventEmitter<string> = new EventEmitter();

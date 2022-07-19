@@ -50,3 +50,10 @@
     </div>
   </div>
 </div>
+
+<div *ngIf="isShow">
+  <app-modal-contents [buttons]="false" class="modal-center">
+    <img class="image-modal" src="assets/images/exclamation.png" alt="exclamation">
+    <h3 class="montserrat-bold">Usuario o contraseña incorrecta</h3>
+  </app-modal-contents>
+</div>

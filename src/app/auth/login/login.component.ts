@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
   public isPassword: boolean = true;
+  public isShow: boolean = false;
 
   constructor(
     public router: Router,
@@ -34,10 +35,21 @@ export class LoginComponent implements OnInit {
   }
 
   public onLogin(): void{
-    const {email, password, remember} = this.loginForm.value;
+    const {email, password} = this.loginForm.value;
     const logged = this.authService.login(email, password);
-    logged && this.router.navigate(['/dashboard/solicite-card']);
-    (logged && remember) && this.storageService.setUser({email, password});
+    if (logged){
+      this.storageService.setUser({email, password});
+      this.router.navigate(['/dashboard/solicite-card']);
+    }else {
+      this.showModal();
+    }
+  }
+
+  private showModal(){
+    this.isShow = true;
+    setTimeout(() => {
+      this.isShow = false;
+    }, 1500);
   }
 
   private createForm(): void {

@@ -10,6 +10,7 @@ export class ModalFormComponent implements OnInit {
 
   @Input() title: string;
   @Input() label: string;
+  @Input() class: string = 'modal-dashboard';
   @Output() onClose: EventEmitter<boolean> = new EventEmitter();
   @Output() onSend: EventEmitter<string> = new EventEmitter();
 

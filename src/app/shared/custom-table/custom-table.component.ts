@@ -1,5 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { Info } from 'src/app/core/models/character-model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Header } from 'src/app/core/models/table-model';
 
 @Component({
@@ -10,24 +9,25 @@ import { Header } from 'src/app/core/models/table-model';
     '(window:resize)': 'onResize($event.target)'
   }
 })
-export class CustomTableComponent implements OnChanges {
+export class CustomTableComponent implements OnInit{
 
   @Input() headers: Header[];
   @Input() data: any[];
-  @Input() info: Info;
+  @Input() pages: number;
+  @Input() count: number;
   @Output() onChangePage: EventEmitter<number> = new EventEmitter();
-  public widthClass: string;
+  public contentClass: string;
+  public tableClass: string;
   public pagesArray: number[];
-  public indexPage: number = 1;
   public rangePage: number[];
+  public indexPage: number = 1;
+  private numbers: number;
 
-  constructor(){
+  constructor(){}
 
-  }
-
-  ngOnChanges(): void {
+  ngOnInit(): void {
     this.setwidth(screen.width);
-    this.setpageArray();
+    setTimeout(() => { this.setpageArray() }, 100);
   }
 
   onResize(target: Window){
@@ -35,15 +35,17 @@ export class CustomTableComponent implements OnChanges {
   }
 
   setwidth(width: number): void{
-    this.widthClass = (width >= 1024) ? 'desktop' : 'mobile';
+    this.contentClass = (width >= 1024) ? 'content-desktop' : 'content-mobile';
+    this.tableClass = (width >= 1024) ? '' : 'table-width';
+    this.numbers = (width >= 1024) ? 5 : 3;
   }
 
   private setpageArray(){
-    this.pagesArray = new Array(this.info?.pages);
+    this.pagesArray = new Array(this.pages);
     for (let index = 0; index < this.pagesArray.length; index++) {
       this.pagesArray?.fill(index + 1 , index);
     }
-    const range = this.info?.pages >= 5 ? 5 : this.info?.pages;
+    const range = this.pages >= this.numbers ? this.numbers : this.pages;
     this.setRange(1, range);
   }
 
@@ -64,17 +66,18 @@ export class CustomTableComponent implements OnChanges {
 
   public selectNumber(num: number){
     this.indexPage = num;
+    this.changeRange();
   }
 
   private setRange(initial: number, range: number){
     initial = initial - 1;
-    this.rangePage = this.pagesArray?.slice(initial , initial + range);
+    this.rangePage = this.pagesArray.slice(initial , initial + range);
   }
 
   private changeRange(){
-    this.onChangePage.emit(this.indexPage);
     const include = this.rangePage.includes(this.indexPage);
-    !include && this.setRange(this.indexPage, 5);
+    !include && this.setRange(this.indexPage, this.numbers);
+    this.onChangePage.emit(this.indexPage);
   }
 
 }
